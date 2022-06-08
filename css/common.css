@@ -22,3 +22,21 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+ul{
+    list-style: none;
+  
+}
+.gallery{
+  display: flex;
+}
+.picture-item{
+  
+  width: calc(100%/ 3 - 45px);
+  margin-right: 15px;
+}
+.picture{
+ 
+  width: 100%;
+  
+}
