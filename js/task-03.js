@@ -12,18 +12,11 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-const makeGaleryList = ({ url, alt }) => {
-  const li = document.createElement("li");
-  const image = document.createElement("img");
-  li.classList.add("picture-item");
-
-  image.classList.add("picture");
-  image.src = url;
-  image.alt = alt;
-
-  li.append(image);
-  return li;
+const makeGaleryList = (acc, item) => {
+  const { url, alt } = item;
+  const itemHTML = `<li class="picture-item"> <img class="picture" src= "${url}" alt="${alt}"></li>`;
+  return acc + itemHTML;
 };
-const myList = images.map(makeGaleryList);
+const myList = images.reduce(makeGaleryList, "");
 
-document.querySelector(".gallery").append(...myList);
+document.querySelector(".gallery").insertAdjacentHTML("beforeend", myList);
